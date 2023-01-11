@@ -1,5 +1,5 @@
-import React,{useState,useEffect} from 'react'
-import { Alert, Button, message, Space } from 'antd';
+import React,{useState} from 'react'
+import { message, } from 'antd';
 
 const AdminLogin = () => {
   const [email,setEmail] = useState(null)

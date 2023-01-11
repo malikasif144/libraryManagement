@@ -7,6 +7,7 @@ import AdminLogin from './components/AdminLogin';
 import UserLogin from './components/UserLogin';
 import AddUpdate from './components/AddUpdate';
 import Books from './components/Books';
+import EditBooks from './components/EditBooks';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/userlogin' element={<UserLogin/>}/>
         <Route path='/addbooks' element={<AddUpdate/>}/>
         <Route path='/books' element={<Books/>}/>
+        <Route path='/editbooks/:id' element={<EditBooks/>}/>
       </Routes>
    
     </div>

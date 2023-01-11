@@ -40,6 +40,15 @@ const SignupForm = () => {
         }else{
             message.error("Password Mismatch")
         }
+        dispatch(setUserRegistration({
+            firstName,
+            lastName,
+            email,
+            password,
+            confirmPassword
+
+        }))
+    }
   return (
     <div className="form container">
           <div className="form-body">

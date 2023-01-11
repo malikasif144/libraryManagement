@@ -17,17 +17,20 @@ const initialState = {
         setUserRegistration(state,action){
             state.userRegister = {...state.userRegister,...action.payload}
         },
-        addBook : (state,action) =>{
+        addBook  (state=initialState,action){
            state.add.push({...action.payload});
         },
-        deleteBook : (state,action) =>{
-            const exist = state.add.find((x) => x.id === action.payload);
-            if (exist) {
-              return state.add.filter((item) => item.id !== exist.id);
-              //  state.filter((item) => item.id !== exist.id);
-            }
+        deleteBook  (state,action){
+                    let {add} = state;
+                    state.add = add.filter((item) => 
+                    item.id !== action.payload);
+        },
+        editBooks(state,action){
+            let {add} = state;
+            state.add = add.map(item => item.id === action.payload.id ? action.payload : item)
+       return state
         }
     }
 })
-export  const {setUserRegistration,addBook,deleteBook} = registerSlice.actions;
+export  const {setUserRegistration,addBook,deleteBook,editBooks} = registerSlice.actions;
 export default registerSlice.reducer

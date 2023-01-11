@@ -18,7 +18,7 @@ const UserLogin = () => {
         }
     }
     const handleLogin = (e) => {
-        if (userRegister[0]?.email === email && userRegister[0]?.password === password) {
+        if (userRegister?.email === email && userRegister?.password === password) {
             message.success("login successfully")
 
         } else {
@@ -44,7 +44,7 @@ const UserLogin = () => {
                 </div>
             </div>
             <div className="footer">
-                <button type="submit" onClick={handleLogin} className="btn text-center btn-info">Login</button>
+                <button type="submit" onClick={(e)=>handleLogin(e)} className="btn text-center btn-info">Login</button>
             </div>
         </div>
     )
